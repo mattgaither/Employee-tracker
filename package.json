@@ -1,7 +1,25 @@
 {
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattgaither/Employee-tracker"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattgaither/Employee-tracker/issues"
+  },
+  "homepage": "https://github.com/mattgaither/employee-tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
-    "inquirer": "^9.0.2",
+    "inquirer": "^8.2.4",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.19"
   }

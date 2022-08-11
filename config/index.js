@@ -6,15 +6,15 @@ class DB {
   }
 
   findAllDepartments() {
-    return this.connection.promise().query("Select * from this department");
+    return this.connection.promise().query("Select * FROM department");
   }
 
   findAllRoles() {
-    return this.connection.promise().query("SELECT * from role");
+    return this.connection.promise().query("SELECT * FROM role");
   }
 
   findAllEmployees() {
-    return this.connection.promise().query("SELECT * from employee");
+    return this.connection.promise().query("SELECT * FROM employee");
   }
 
   addEmployee(employee) {
