@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const db = require("./config");
 require('console.table');
 
+// This starts the prompts when the user inputs "node server.js" in the command line.
 const startChoiceMenu = () => {
   inquirer
     .prompt({
@@ -46,11 +47,7 @@ const startChoiceMenu = () => {
     });
 };
 
-// this statement is the same as the first case in our swtich statement above
-// if(userChoice.startChoiceMenu === "View all Departments"){
-//   viewAllDepartments()
-// }
-
+// This function is to view all the departments in the database
 const viewAllDepartments = () => {
   db.findAllDepartments()
     .then(([rows]) => {
@@ -60,15 +57,17 @@ const viewAllDepartments = () => {
     .then(() => startChoiceMenu());
 };
 
+// This function is to view all the roles in the database
 const viewAllRoles = () => {
   db.findAllRoles()
     .then(([rows]) => {
       let roles = rows;
       console.table(roles);
-    })
+  })
     .then(() => startChoiceMenu());
 };
 
+// This function is to view all the employees in the database
 const viewAllEmployees = () => {
   db.findAllEmployees()
     .then(([rows]) => {
@@ -78,6 +77,7 @@ const viewAllEmployees = () => {
     .then(() => startChoiceMenu());
 };
 
+// This function is to add a new department to the database
 const addNewDepartment = () => {
   inquirer
     .prompt([
@@ -96,6 +96,7 @@ const addNewDepartment = () => {
     });
 };
 
+//This function adds a new role to the database
 const addNewRole = () => {
   inquirer
     .prompt([
@@ -145,6 +146,7 @@ const addNewRole = () => {
     });
 };
 
+// This function is to add a new employee to the database and put them in the role the users assign
 const addNewEmployee = () => {
   inquirer
     .prompt([
@@ -222,6 +224,7 @@ const addNewEmployee = () => {
     });
 };
 
+// This function allows the user to change a role for a employee already in the database
 const updateEmployeeRole = () => {
   db.findAllEmployees().then(([rows]) => {
     let employees = rows;
